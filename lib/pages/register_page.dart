@@ -176,6 +176,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               MaterialPageRoute(builder: (context) {
                             return const LoginPage();
                           }));
+                          Navigator.pop(context);
                         },
                         style: TextButton.styleFrom(
                             foregroundColor: const Color.fromRGBO(0, 0, 0, 0.27),
