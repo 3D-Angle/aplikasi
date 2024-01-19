@@ -1,5 +1,6 @@
 import 'package:app_3d_angle/pages/login_page.dart';
 import 'package:app_3d_angle/pages/otp_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -25,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
               height: height(context) * 0.25,
               width: width(context),
               decoration: BoxDecoration(
-                  color: const Color(0xFFD9D9D9), border: Border.all(width: 0)),
+                  color: const Color(0xFF749BC2), border: Border.all(width: 0)),
             ),
             Positioned(
               top: height(context) * 0.15,
@@ -40,7 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   const Text(
                     "Welcome",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xff4682A9)),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(
@@ -48,21 +49,21 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   const TextField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.person,
-                          color: Color.fromRGBO(0, 0, 0, 0.27)),
+                      prefixIcon: Icon(Icons.create_outlined,
+                          color: Color(0xff4682A9)),
                       focusedBorder: UnderlineInputBorder(
                           borderSide:
-                              BorderSide(color: Color.fromRGBO(0, 0, 0, 0.27))),
+                              BorderSide(color: Color(0xff4682A9))),
                       labelText: "Username",
                       labelStyle: TextStyle(
-                          color: Color.fromRGBO(0, 0, 0, 0.27),
+                          color: Color.fromRGBO(70, 130, 169, 0.27),
                           fontWeight: FontWeight.w500,
                           fontSize: 16),
                     ),
                   ),
                   const TextField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email,
+                      prefixIcon: Icon(Icons.create_outlined,
                           color: Color.fromRGBO(0, 0, 0, 0.27)),
                       focusedBorder: UnderlineInputBorder(
                           borderSide:
@@ -77,7 +78,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   TextField(
                     obscureText: passwordSee,
                     decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.lock,
+                      prefixIcon: const Icon(Icons.create_outlined,
                           color: Color.fromRGBO(0, 0, 0, 0.27)),
                       suffixIcon: GestureDetector(
                         onTap: () {
@@ -104,7 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   TextField(
                     obscureText: passwordSee,
                     decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.lock,
+                      prefixIcon: const Icon(Icons.create_outlined,
                           color: Color.fromRGBO(0, 0, 0, 0.27)),
                       suffixIcon: GestureDetector(
                         onTap: () {
@@ -141,6 +142,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      const Text("Sign Up",
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff4682A9))),
                       TextButton(
                         onPressed: () {
                               Navigator.push(context, 
@@ -150,18 +156,33 @@ class _RegisterPageState extends State<RegisterPage> {
                           );
                         },
                         style: TextButton.styleFrom(
-                            foregroundColor: const Color.fromRGBO(0, 0, 0, 0.27),
-                            padding: EdgeInsets.zero),
-                        child: const Text("Sign Up",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold)),
-                      ),
-                      const Image(
-                        image: AssetImage("assets/images/logo.png"),
-                        width: 45,
+                            textStyle: const TextStyle(fontSize: 24),
+                            padding: EdgeInsets.zero,
+                            foregroundColor: Color(0xff4682A9)),
+                        child: Icon(CupertinoIcons.arrow_right_circle_fill,
+                            size: 54),
                       )
+                      // TextButton(
+                      //   onPressed: () {
+                      //         Navigator.push(context, 
+                      //         MaterialPageRoute(builder: (context) {
+                      //         return const OTPPage();
+                      //       })
+                      //     );
+                      //   },
+                      //   style: TextButton.styleFrom(
+                      //       foregroundColor: const Color.fromRGBO(0, 0, 0, 0.27),
+                      //       padding: EdgeInsets.zero),
+                      //   child: const Text("Sign Up",
+                      //       style: TextStyle(
+                      //           color: Colors.black,
+                      //           fontSize: 24,
+                      //           fontWeight: FontWeight.bold)),
+                      // ),
+                      // const Image(
+                      //   image: AssetImage("assets/images/logo.png"),
+                      //   width: 45,
+                      // )
                       // ElevatedButton(onPressed: (){}, child: Text("Sign In"), style: ElevatedButton.styleFrom(
                       //   backgroundColor: Colors.transparent,
                       // ),)
